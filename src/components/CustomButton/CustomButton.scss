@@ -1,0 +1,7 @@
+@import url('./../../assets/fonts/fonts.scss');
+$baseSize:10px;
+
+.CustomButton{
+    font-size:2*$baseSize!important;
+    font-family: IRANSansWeb, sans-serif !important;
+}

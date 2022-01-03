@@ -1,0 +1,75 @@
+@import url('./../../../assets/fonts/fonts.scss');
+$baseSize:10px;
+$blue: #0292cd;
+$grey: #dfd7d7;
+$RH:var(--RH);
+
+@keyframes colorProgress {
+    from{transform: translateY(20*$baseSize);}
+    to{transform: translateY($RH);}
+}
+
+
+.Sensor2 , .ProgressBox , .CenterBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.Sensor2{
+    width:28*$baseSize;
+    height: 28*$baseSize;
+    font-size:3*$baseSize;
+    border-radius: 3*$baseSize;
+    background-color: #f3efef;
+    justify-content: space-around;
+    
+
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 4*$baseSize;
+        padding: $baseSize;
+        margin: 0 0 $baseSize 0;
+        
+        font-size:2*$baseSize;
+        font-family: IRANSansWeb, sans-serif;
+        font-weight:bold;
+    }
+
+    .ProgressBox{
+        position: relative;
+
+        overflow: hidden;
+        border-radius: 50%;
+        background-color: $grey;
+
+        .CenterBox{
+            justify-content: space-around;
+            position: absolute;
+
+            width: 17*$baseSize;
+            height: 17*$baseSize;  
+            background-color: white;
+            border-radius: 50%;
+            padding: 0.5*$baseSize;
+
+            img{
+                width: 11*$baseSize;
+                height:auto;
+            }
+        }
+
+        .ColorBox{
+            width: 20*$baseSize;
+            height: 20*$baseSize;
+            background-color:$blue;
+            animation: colorProgress var(--time);
+            transform: translateY(var(--RH));
+        }
+    }
+}
